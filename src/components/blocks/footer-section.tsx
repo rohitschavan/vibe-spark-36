@@ -1,19 +1,217 @@
-export function FooterSection() {
-  const currentYear = new Date().getFullYear();
+import {
+  Facebook,
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+  Code2,
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 
+const data = {
+  facebookLink: 'https://facebook.com/vibeitsolutions',
+  instaLink: 'https://instagram.com/vibeitsolutions',
+  twitterLink: 'https://twitter.com/vibeitsolutions',
+  githubLink: 'https://github.com/vibeitsolutions',
+  linkedinLink: 'https://linkedin.com/company/vibeitsolutions',
+  services: {
+    customSoftware: '/ai-integrated-software',
+    cloudSolutions: '/cloud-ai-infrastructure',
+    aiSolutions: '/ai-solutions',
+  },
+  about: {
+    team: '#',
+    careers: '#',
+  },
+  help: {
+    faqs: '#',
+    support: '#',
+  },
+  contact: {
+    email: 'info@vibeitsolutions.com',
+    phone: '+91 9823885440',
+    addressPune:
+      '4th Floor, Balaji Business Centre, Pashan Hwy Side Rd, Baner, Pune, Maharashtra 411045',
+    addressRanchi: '405 Savera Enclave, Piska More, Ranchi, Jharkhand 834005',
+  },
+  company: {
+    name: 'Vibe IT Solutions',
+    description:
+      'Transforming ideas into reality with cutting-edge software solutions. We help businesses build custom software, leverage cloud infrastructure, and integrate generative AI.',
+  },
+};
+
+const socialLinks = [
+  { icon: Facebook, label: 'Facebook', href: data.facebookLink },
+  { icon: Instagram, label: 'Instagram', href: data.instaLink },
+  { icon: Twitter, label: 'Twitter', href: data.twitterLink },
+  { icon: Github, label: 'GitHub', href: data.githubLink },
+  { icon: Linkedin, label: 'LinkedIn', href: data.linkedinLink },
+];
+
+const serviceLinks = [
+  { text: 'Custom Software Development', href: data.services.customSoftware },
+  { text: 'Cloud Solutions', href: data.services.cloudSolutions },
+  { text: 'AI Solutions', href: data.services.aiSolutions },
+];
+
+const aboutLinks = [
+  { text: 'Meet the Team', href: data.about.team },
+  { text: 'Careers', href: data.about.careers },
+];
+
+const helpfulLinks = [
+  { text: 'FAQs', href: data.help.faqs },
+  { text: 'Support', href: data.help.support },
+];
+
+const contactInfo = [
+  { icon: Mail, text: data.contact.email },
+  { icon: Phone, text: data.contact.phone },
+  { icon: MapPin, text: data.contact.addressPune, isAddress: true },
+  { icon: MapPin, text: data.contact.addressRanchi, isAddress: true },
+];
+
+export function FooterSection() {
   return (
-    <footer className="border-t border-border bg-card py-10">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} VIBE IT SOLUTIONS
+    <footer className="border-t border-border bg-card">
+      <div className="mx-auto max-w-7xl px-6 py-12 lg:py-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          {/* Brand column */}
+          <div className="lg:col-span-4">
+            <Link to="/" className="inline-flex items-center gap-2">
+              <Code2 className="h-7 w-7 text-primary" />
+              <span className="text-xl font-bold text-foreground">
+                {data.company.name}
+              </span>
+            </Link>
+
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              {data.company.description}
+            </p>
+
+            <div className="mt-6 flex gap-3">
+              {socialLinks.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                >
+                  <span className="sr-only">{label}</span>
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Link columns */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8">
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">
+                Our Services
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {serviceLinks.map(({ text, href }) => (
+                  <li key={text}>
+                    <Link
+                      to={href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">
+                About Us
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {aboutLinks.map(({ text, href }) => (
+                  <li key={text}>
+                    <Link
+                      to={href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">
+                Helpful Links
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {helpfulLinks.map(({ text, href }) => (
+                  <li key={text}>
+                    <Link
+                      to={href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">
+                Contact Us
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {contactInfo.map(({ icon: Icon, text, isAddress }) => (
+                  <li key={text} className="flex items-start gap-2">
+                    <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    {isAddress ? (
+                      <span className="text-sm text-muted-foreground">
+                        {text}
+                      </span>
+                    ) : (
+                      <a
+                        href={
+                          text.includes('@')
+                            ? `mailto:${text}`
+                            : `tel:${text.replace(/\s/g, '')}`
+                        }
+                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      >
+                        {text}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} {data.company.name}. All rights
+            reserved.
           </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
-            <span>·</span>
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <span>·</span>
-            <a href="#" className="hover:text-foreground transition-colors">User Data Deletion</a>
+          <div className="flex gap-6 text-xs text-muted-foreground">
+            <a href="#" className="transition-colors hover:text-foreground">
+              Terms of Service
+            </a>
+            <a href="#" className="transition-colors hover:text-foreground">
+              Privacy Policy
+            </a>
+            <a href="#" className="transition-colors hover:text-foreground">
+              User Data Deletion
+            </a>
           </div>
         </div>
       </div>
