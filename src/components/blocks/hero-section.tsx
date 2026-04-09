@@ -122,6 +122,8 @@ export function HeroSection() {
 
 const menuItems = [
   { name: 'Services', href: '#services' },
+  { name: 'AI Solutions', href: '/ai-solutions' },
+  { name: 'Cloud Solutions', href: '/cloud-ai-infrastructure' },
   { name: 'Technologies', href: '#technologies' },
   { name: 'Why Us', href: '#why-us' },
   { name: 'Contact', href: '#contact' },

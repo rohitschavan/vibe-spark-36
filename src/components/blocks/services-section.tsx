@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code, Cloud, Brain, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const services = [
@@ -9,6 +10,7 @@ const services = [
     description:
       'From AI copilots and chat assistants to workflow automation and RAG systems, we build production-ready generative AI products tailored to your business.',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+    href: '/ai-solutions',
   },
   {
     icon: Code,
@@ -16,6 +18,7 @@ const services = [
     description:
       'We build secure web and mobile applications that integrate LLMs, vector databases, APIs, and internal systems for real-world AI adoption.',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80',
+    href: '/ai-integrated-software',
   },
   {
     icon: Cloud,
@@ -23,6 +26,7 @@ const services = [
     description:
       'Deploy and scale AI workloads on AWS, Azure, and Google Cloud with observability, cost control, and enterprise-grade reliability.',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
+    href: '/cloud-ai-infrastructure',
   },
 ];
 
@@ -69,6 +73,10 @@ export function ServicesSection() {
                 </div>
                 <h3 className="text-xl font-bold font-display text-card-foreground">{service.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                <Link to={service.href} className="mt-5 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                  Explore solution
+                  <ArrowRight className="ml-1.5 h-4 w-4" />
+                </Link>
               </div>
             </motion.div>
           ))}
