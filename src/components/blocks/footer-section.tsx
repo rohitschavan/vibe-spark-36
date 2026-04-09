@@ -1,10 +1,12 @@
 export function FooterSection() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="border-t border-border bg-card py-10">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2025 VIBE IT SOLUTIONS
+            © {currentYear} VIBE IT SOLUTIONS
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>

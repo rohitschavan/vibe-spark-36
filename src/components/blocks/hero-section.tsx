@@ -44,7 +44,7 @@ export function HeroSection() {
                     href="#services"
                     className="inline-flex items-center gap-2 rounded-full border border-hero-muted/20 bg-hero/80 backdrop-blur px-4 py-1.5 text-sm text-hero-muted hover:bg-hero-muted/10 transition-colors"
                   >
-                    <span className="gradient-text font-medium">Custom Software & AI Solutions</span>
+                    <span className="gradient-text font-medium">Generative AI Solutions for Business</span>
                     <ChevronRight className="h-4 w-4" />
                   </a>
                 </AnimatedGroup>
@@ -54,7 +54,7 @@ export function HeroSection() {
                   className="mt-8 text-4xl font-bold tracking-tight text-hero-foreground md:text-6xl lg:text-7xl font-display"
                   delay={0.2}
                 >
-                  Transforming Ideas into Reality
+                  Building AI-First Products That Deliver Results
                 </TextEffect>
 
                 <TextEffect
@@ -63,7 +63,7 @@ export function HeroSection() {
                   className="mx-auto mt-6 max-w-2xl text-lg text-hero-muted"
                   delay={0.5}
                 >
-                  Cutting-edge Software Solutions — Custom Software Development, Cloud Solutions, Generative AI & On-Demand Resources.
+                  We primarily design and deploy generative AI solutions, supported by modern software engineering and scalable cloud infrastructure.
                 </TextEffect>
 
                 <AnimatedGroup
@@ -77,7 +77,7 @@ export function HeroSection() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="rounded-full px-8 border-hero-muted/30 text-hero-foreground hover:bg-hero-muted/10 hover:text-hero-foreground"
+                    className="rounded-full px-8 border-hero-muted/30 bg-transparent text-hero-foreground hover:bg-hero-muted/10 hover:text-hero-foreground"
                   >
                     <a href="#services">Services Overview</a>
                   </Button>

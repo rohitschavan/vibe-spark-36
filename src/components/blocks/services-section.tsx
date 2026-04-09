@@ -4,25 +4,25 @@ import { Button } from '@/components/ui/button';
 
 const services = [
   {
-    icon: Code,
-    title: 'Custom Software Development',
+    icon: Brain,
+    title: 'Generative AI Solutions',
     description:
-      'Transform your business with high-quality web applications using ReactJS, Angular, and NodeJS. Our expertise extends to mobile development with React Native and Ionic, delivering robust and intuitive solutions.',
+      'From AI copilots and chat assistants to workflow automation and RAG systems, we build production-ready generative AI products tailored to your business.',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+  },
+  {
+    icon: Code,
+    title: 'AI-Integrated Software Development',
+    description:
+      'We build secure web and mobile applications that integrate LLMs, vector databases, APIs, and internal systems for real-world AI adoption.',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80',
   },
   {
     icon: Cloud,
-    title: 'Hosting & Cloud Solutions',
+    title: 'Cloud & AI Infrastructure',
     description:
-      'Elevate your business with comprehensive cloud solutions. We provide expert services in AWS, Azure, and Google Cloud for scalable, secure, and efficient infrastructure tailored to your needs.',
+      'Deploy and scale AI workloads on AWS, Azure, and Google Cloud with observability, cost control, and enterprise-grade reliability.',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
-  },
-  {
-    icon: Brain,
-    title: 'Generative AI Solutions',
-    description:
-      'Unlock the potential of AI with cutting-edge generative AI solutions. We create intelligent systems that enhance productivity, drive decision-making, and foster innovation for your business.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
   },
 ];
 
@@ -37,12 +37,12 @@ export function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium uppercase tracking-widest text-primary">What We Do</span>
+          <span className="text-sm font-medium uppercase tracking-widest text-primary">AI-First Services</span>
           <h2 className="mt-4 text-3xl font-bold font-display md:text-5xl text-foreground">
-            Services <span className="gradient-text">Overview</span>
+            Generative AI <span className="gradient-text">Overview</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            End-to-end solutions to bring your vision to life
+            End-to-end AI solutions focused on measurable business impact
           </p>
         </motion.div>
 
