@@ -1,70 +1,175 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Brain, Database, Cpu, Zap, CheckCircle, ArrowRight, Layers, MessageSquare, Search } from 'lucide-react';
+import {
+  Brain,
+  ArrowRight,
+  Briefcase,
+  Handshake,
+  ShieldCheck,
+  CircleDollarSign,
+  Bot,
+  MessagesSquare,
+  Eye,
+  Sparkles,
+  FileSearch,
+  TrendingUp,
+  Network,
+  Wrench,
+  Plug,
+  HeartPulse,
+  Landmark,
+  ShoppingBag,
+  Truck,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { TextEffect } from '@/components/ui/text-effect';
+import { HeroHeader } from '@/components/blocks/hero-section';
 import { FooterSection } from '@/components/blocks/footer-section';
 
-const benefits = [
+const whyChoose = [
   {
-    icon: Zap,
-    title: 'Faster Decision Making',
-    description: 'AI systems process and analyze data in real time, enabling businesses to make informed decisions quickly and accurately.',
+    icon: Briefcase,
+    title: 'Industry-Focused Expertise',
+    description:
+      "Our AI teams understand your business domain, whether it's finance, healthcare, retail, or logistics, helping us deliver faster and more relevant solutions.",
   },
   {
-    icon: Layers,
-    title: 'Contextual Understanding',
-    description: 'RAG combines retrieval and generation to provide responses grounded in your actual business data, reducing hallucinations and improving accuracy.',
+    icon: Handshake,
+    title: 'Flexible Engagement Models',
+    description: 'Work with us your way, onshore, offshore, or hybrid, ensuring seamless collaboration and transparency.',
   },
   {
-    icon: Database,
-    title: 'Knowledge Base Integration',
-    description: 'Connect your existing documents, databases, and knowledge bases to AI models, making them aware of your specific domain and context.',
+    icon: ShieldCheck,
+    title: 'Reliable Technology Partner',
+    description: 'We focus on long-term partnerships, delivering scalable, secure, and future-ready AI systems.',
   },
   {
-    icon: MessageSquare,
-    title: 'Intelligent Customer Support',
-    description: 'Build AI assistants that understand your products, policies, and customer history to provide accurate and helpful responses.',
-  },
-  {
-    icon: Search,
-    title: 'Semantic Search',
-    description: 'Go beyond keyword matching with AI powered search that understands intent and meaning, delivering more relevant results from your data.',
-  },
-  {
-    icon: Cpu,
-    title: 'Process Automation',
-    description: 'Automate complex workflows by combining AI reasoning with access to your internal systems and data sources.',
+    icon: CircleDollarSign,
+    title: 'Cost-Effective Innovation',
+    description: 'Get enterprise-grade AI solutions without enterprise-level costs.',
   },
 ];
 
-const howWeHelp = [
-  'Custom RAG pipeline development tailored to your data sources and business requirements',
-  'Integration of AI models with your existing applications and infrastructure',
-  'Vector database setup and optimization for efficient knowledge retrieval',
-  'Fine tuning and prompt engineering to maximize accuracy for your use cases',
-  'End to end AI application development from concept to production deployment',
-  'Ongoing monitoring, evaluation, and improvement of AI system performance',
-  'Data preparation and preprocessing pipelines for high quality AI inputs',
-  'Security and compliance implementation for AI systems handling sensitive data',
+const impactMetrics = [
+  { value: '10x Faster Operations', description: 'Automate repetitive processes and accelerate workflows' },
+  { value: '70% Cost Optimization', description: 'Reduce manual effort and operational expenses' },
+  { value: '90% Productivity Boost', description: 'Free your team to focus on strategic tasks' },
+  { value: 'Data-Driven Decisions', description: 'Turn raw data into actionable insights instantly' },
+];
+
+const aiServices = [
+  {
+    icon: Brain,
+    title: 'Machine Learning Solutions',
+    description: 'We build intelligent systems that learn from your data to predict outcomes, detect patterns, and automate decision-making.',
+  },
+  {
+    icon: Bot,
+    title: 'Robotic Process Automation (RPA)',
+    description: 'Automate repetitive tasks like data entry, document handling, and workflows to improve efficiency and accuracy.',
+  },
+  {
+    icon: MessagesSquare,
+    title: 'Natural Language Processing (NLP)',
+    description: 'Enable machines to understand and respond to human language, ideal for chatbots, sentiment analysis, and document processing.',
+  },
+  {
+    icon: MessagesSquare,
+    title: 'Conversational AI',
+    description: 'Build smart virtual assistants and AI chatbots to enhance customer support and internal operations.',
+  },
+  {
+    icon: Eye,
+    title: 'Computer Vision',
+    description: 'Leverage image recognition, object detection, and visual intelligence for automation and analytics.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Generative AI Solutions',
+    description: 'Develop AI systems that create content, text, images, code, and more, to boost productivity and innovation.',
+  },
+  {
+    icon: FileSearch,
+    title: 'Intelligent Document Processing',
+    description: 'Extract, classify, and manage data from documents automatically with high accuracy.',
+  },
+];
+
+const advancedCapabilities = [
+  {
+    icon: TrendingUp,
+    title: 'Predictive Analytics',
+    description: 'Make smarter decisions with AI models that forecast trends, risks, and opportunities.',
+  },
+  {
+    icon: Network,
+    title: 'Deep Learning Models',
+    description: 'We design advanced neural networks for complex use cases like speech recognition, recommendation engines, and fraud detection.',
+  },
+  {
+    icon: Wrench,
+    title: 'Custom AI Development',
+    description: 'Every business is unique, so are our AI solutions. We build tailored systems aligned with your goals.',
+  },
+  {
+    icon: Plug,
+    title: 'AI Integration Services',
+    description: 'Seamlessly integrate AI into your existing applications, workflows, and infrastructure.',
+  },
+];
+
+const industries = [
+  {
+    icon: HeartPulse,
+    title: 'Healthcare',
+    description: 'Improve diagnostics, patient care, and operational efficiency using AI-driven insights.',
+  },
+  {
+    icon: Landmark,
+    title: 'Finance',
+    description: 'Enhance fraud detection, automate risk analysis, and optimize financial operations.',
+  },
+  {
+    icon: ShoppingBag,
+    title: 'Retail & E-commerce',
+    description: 'Deliver personalized experiences, smart recommendations, and inventory optimization.',
+  },
+  {
+    icon: Truck,
+    title: 'Logistics & Transportation',
+    description: 'Optimize routes, forecast demand, and improve supply chain efficiency.',
+  },
+];
+
+const approachSteps = [
+  {
+    title: 'Discover & Strategize',
+    description: 'We understand your business goals and identify AI opportunities.',
+  },
+  {
+    title: 'Design & Develop',
+    description: 'Build scalable AI models using the latest tools and technologies.',
+  },
+  {
+    title: 'Integrate & Deploy',
+    description: 'Seamlessly integrate AI into your systems with minimal disruption.',
+  },
+  {
+    title: 'Monitor & Optimize',
+    description: 'Continuously improve performance with ongoing support and enhancements.',
+  },
 ];
 
 const AISolutions = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero */}
+      <HeroHeader />
       <div className="hero-section relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary blur-[100px]" />
           <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-accent blur-[100px]" />
         </div>
         <div className="relative mx-auto max-w-5xl px-6 py-24 md:py-32">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-hero-muted hover:text-hero-foreground transition-colors mb-8"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,21 +179,33 @@ const AISolutions = () => {
               <Brain className="h-4 w-4" />
               AI Solutions
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold font-display text-hero-foreground leading-tight max-w-3xl">
-              AI Integration and <span className="gradient-text">RAG Solutions</span> for Your Business
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-hero-muted max-w-2xl leading-relaxed">
-              Leverage the power of Retrieval Augmented Generation and intelligent AI integration to transform your applications with context aware, accurate, and reliable AI capabilities.
-            </p>
+            <TextEffect
+              preset="blur"
+              className="text-4xl md:text-6xl font-bold font-display text-hero-foreground leading-tight max-w-3xl"
+            >
+              Transform Your Business with Intelligent AI Solutions
+            </TextEffect>
+            <TextEffect
+              per="word"
+              preset="fade"
+              delay={0.2}
+              className="mt-6 text-lg md:text-xl text-hero-muted max-w-2xl leading-relaxed"
+            >
+              At Vibe IT Solutions, we empower businesses to scale faster, operate smarter, and innovate continuously using cutting-edge Artificial Intelligence. From automation to predictive insights, our AI solutions are designed to solve real-world business challenges.
+            </TextEffect>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#contact-section">
+              <Link to="/contact">
                 <Button size="lg" className="rounded-full">
-                  Get Started
+                  Request a Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </a>
-              <a href="#benefits">
-                <Button size="lg" variant="outline" className="rounded-full border-hero-muted/30 text-hero-foreground hover:bg-hero-foreground/10">
+              </Link>
+              <a href="#why-choose">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full border-hero-muted/40 bg-transparent text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground"
+                >
                   Learn More
                 </Button>
               </a>
@@ -97,49 +214,7 @@ const AISolutions = () => {
         </div>
       </div>
 
-      {/* What is RAG */}
-      <section className="py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="grid gap-12 md:grid-cols-2 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-sm font-medium uppercase tracking-widest text-primary">Understanding RAG</span>
-              <h2 className="mt-4 text-3xl font-bold font-display md:text-4xl text-foreground">
-                What is Retrieval Augmented Generation?
-              </h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed">
-                Retrieval Augmented Generation (RAG) is a technique that enhances AI language models by connecting them to external knowledge sources. Instead of relying solely on training data, RAG systems retrieve relevant information from your documents, databases, and knowledge bases before generating responses.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                This approach significantly improves the accuracy and reliability of AI outputs. By grounding responses in actual data, RAG reduces hallucinations and ensures that the AI provides information that is relevant, up to date, and specific to your business context.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                RAG is particularly valuable for enterprises that need AI systems to work with proprietary data without exposing that data during model training. It allows organizations to maintain control over their information while still benefiting from advanced AI capabilities.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="rounded-2xl overflow-hidden"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80"
-                alt="AI and data integration visualization"
-                className="w-full h-80 object-cover rounded-2xl"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section id="benefits" className="py-24 bg-muted/30">
+      <section id="why-choose" className="py-24 bg-muted/30">
         <div className="mx-auto max-w-7xl px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -148,19 +223,19 @@ const AISolutions = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-medium uppercase tracking-widest text-primary">Benefits</span>
+            <span className="text-sm font-medium uppercase tracking-widest text-primary">Why Choose Us</span>
             <h2 className="mt-4 text-3xl font-bold font-display md:text-5xl text-foreground">
-              Why Integrate AI and <span className="gradient-text">RAG</span> into Your Applications
+              Why Choose <span className="gradient-text">Vibe IT Solutions</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Transform your applications with intelligent, context aware AI capabilities
+              A trusted partner for practical AI adoption and measurable business value
             </p>
           </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {benefits.map((benefit, index) => (
+          <div className="grid gap-8 md:grid-cols-2">
+            {whyChoose.map((item, index) => (
               <motion.div
-                key={benefit.title}
+                key={item.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -168,70 +243,190 @@ const AISolutions = () => {
                 className="rounded-2xl bg-card border border-border p-8 card-glow"
               >
                 <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-3">
-                  <benefit.icon className="h-6 w-6 text-primary" />
+                  <item.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold font-display text-card-foreground">{benefit.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl font-bold font-display text-card-foreground">{item.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How Vibe IT Solutions Can Help */}
       <section className="py-24">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="grid gap-12 md:grid-cols-2 items-start">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-sm font-medium uppercase tracking-widest text-primary">Our Expertise</span>
-              <h2 className="mt-4 text-3xl font-bold font-display md:text-4xl text-foreground">
-                How Vibe IT Solutions Can <span className="gradient-text">Help You</span>
-              </h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed">
-                At Vibe IT Solutions, we specialize in building AI powered applications that deliver real business value. Our team combines deep technical expertise with a practical understanding of business challenges to create solutions that work.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                Whether you need to build a customer facing AI assistant, automate internal processes, or integrate AI capabilities into your existing software, we have the experience and skills to make it happen. We work with you from initial concept through production deployment and ongoing optimization.
-              </p>
-              <a href="/#contact" className="mt-8 inline-block">
-                <Button size="lg" className="rounded-full">
-                  Let's Talk
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-medium uppercase tracking-widest text-primary">AI Impact</span>
+            <h2 className="mt-4 text-3xl font-bold font-display md:text-5xl text-foreground">
+              AI Impact That <span className="gradient-text">Drives Results</span>
+            </h2>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-4"
-            >
-              {howWeHelp.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className="flex items-start gap-3 rounded-xl bg-card border border-border p-4"
-                >
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-card-foreground leading-relaxed">{item}</span>
-                </motion.div>
-              ))}
-            </motion.div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {impactMetrics.map((metric, index) => (
+              <motion.div
+                key={metric.value}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="rounded-2xl bg-card border border-border p-8"
+              >
+                <h3 className="text-2xl font-bold font-display text-card-foreground">{metric.value}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{metric.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      <section className="py-24 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-medium uppercase tracking-widest text-primary">Our Services</span>
+            <h2 className="mt-4 text-3xl font-bold font-display md:text-5xl text-foreground">Our AI Services</h2>
+          </motion.div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {aiServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="rounded-2xl bg-card border border-border p-8"
+              >
+                <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-3">
+                  <service.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold font-display text-card-foreground">{service.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-medium uppercase tracking-widest text-primary">Capabilities</span>
+            <h2 className="mt-4 text-3xl font-bold font-display md:text-5xl text-foreground">
+              Advanced AI <span className="gradient-text">Capabilities</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {advancedCapabilities.map((capability, index) => (
+              <motion.div
+                key={capability.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="rounded-2xl bg-card border border-border p-8"
+              >
+                <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-3">
+                  <capability.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold font-display text-card-foreground">{capability.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{capability.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-medium uppercase tracking-widest text-primary">Industries</span>
+            <h2 className="mt-4 text-3xl font-bold font-display md:text-5xl text-foreground">
+              AI Across <span className="gradient-text">Industries</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={industry.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="rounded-2xl bg-card border border-border p-8"
+              >
+                <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-3">
+                  <industry.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold font-display text-card-foreground">{industry.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{industry.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <span className="text-sm font-medium uppercase tracking-widest text-primary">Our Approach</span>
+            <h2 className="mt-4 text-3xl font-bold font-display md:text-5xl text-foreground">How We Deliver AI Success</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            {approachSteps.map((step, index) => (
+              <div key={step.title} className="flex items-start gap-3 rounded-xl bg-card border border-border p-5">
+                <div className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-card-foreground">{step.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-24 hero-section relative overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <div className="absolute top-1/3 left-1/3 h-48 w-48 rounded-full bg-primary blur-[80px]" />
@@ -243,17 +438,17 @@ const AISolutions = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
+            >
             <h2 className="text-3xl md:text-5xl font-bold font-display text-hero-foreground">
-              Ready to Build with <span className="gradient-text">AI</span>?
+              Ready to Build Your Next <span className="gradient-text">AI Initiative</span>?
             </h2>
             <p className="mt-6 text-lg text-hero-muted max-w-xl mx-auto">
-              Partner with Vibe IT Solutions to integrate intelligent AI capabilities into your applications. Let us help you unlock the full potential of your data.
+              Partner with Vibe IT Solutions to plan, build, and scale intelligent solutions tailored to your business goals.
             </p>
             <div className="mt-8 flex justify-center gap-4">
-              <Link to="/#contact">
+              <Link to="/contact">
                 <Button size="lg" className="rounded-full">
-                  Contact Us
+                  Request a Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>

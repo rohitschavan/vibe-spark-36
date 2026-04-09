@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Cloud, Server, Shield, Activity, Wallet, CheckCircle, ArrowRight } from 'lucide-react';
+import { Cloud, Server, Shield, Activity, Wallet, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { TextEffect } from '@/components/ui/text-effect';
+import { HeroHeader } from '@/components/blocks/hero-section';
 import { FooterSection } from '@/components/blocks/footer-section';
 
 const infrastructurePillars = [
@@ -38,30 +40,32 @@ const outcomes = [
 const CloudAIInfrastructure = () => {
   return (
     <div className="min-h-screen bg-background">
+      <HeroHeader />
       <div className="hero-section relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary blur-[100px]" />
           <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-accent blur-[100px]" />
         </div>
         <div className="relative mx-auto max-w-5xl px-6 py-24 md:py-32">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-hero-muted hover:text-hero-foreground transition-colors mb-8"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary mb-6">
               <Cloud className="h-4 w-4" />
               Cloud & AI Infrastructure
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold font-display text-hero-foreground leading-tight max-w-3xl">
-              Reliable Foundation for <span className="gradient-text">Scalable AI Systems</span>
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-hero-muted max-w-2xl leading-relaxed">
+            <TextEffect
+              preset="blur"
+              className="text-4xl md:text-6xl font-bold font-display text-hero-foreground leading-tight max-w-3xl"
+            >
+              Reliable Foundation for Scalable AI Systems
+            </TextEffect>
+            <TextEffect
+              per="word"
+              preset="fade"
+              delay={0.2}
+              className="mt-6 text-lg md:text-xl text-hero-muted max-w-2xl leading-relaxed"
+            >
               We architect cloud platforms that keep your AI workloads fast, secure, observable, and cost-efficient from pilot to scale.
-            </p>
+            </TextEffect>
           </motion.div>
         </div>
       </div>
@@ -117,7 +121,7 @@ const CloudAIInfrastructure = () => {
               <p className="mt-6 text-muted-foreground leading-relaxed">
                 We establish technical guardrails and operational standards so your teams can ship AI features confidently and sustainably.
               </p>
-              <Link to="/#contact" className="mt-8 inline-block">
+              <Link to="/contact" className="mt-8 inline-block">
                 <Button size="lg" className="rounded-full">
                   Plan Your Infrastructure
                   <ArrowRight className="ml-2 h-4 w-4" />

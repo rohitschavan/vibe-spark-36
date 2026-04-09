@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { AnimatedGroup } from '@/components/ui/animated-group';
 import { TextEffect } from '@/components/ui/text-effect';
@@ -40,13 +41,13 @@ export function HeroSection() {
             <div className="mx-auto max-w-7xl px-6 relative z-10">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup preset="blur-slide">
-                  <a
+                  {/* <a
                     href="#services"
                     className="inline-flex items-center gap-2 rounded-full border border-hero-muted/20 bg-hero/80 backdrop-blur px-4 py-1.5 text-sm text-hero-muted hover:bg-hero-muted/10 transition-colors"
-                  >
+                   >
                     <span className="gradient-text font-medium">Generative AI Solutions for Business</span>
                     <ChevronRight className="h-4 w-4" />
-                  </a>
+                  </a> */}
                 </AnimatedGroup>
 
                 <TextEffect
@@ -71,7 +72,7 @@ export function HeroSection() {
                   className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
                 >
                   <Button size="lg" className="rounded-full px-8 gap-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
-                    <a href="#contact">Get in Touch</a>
+                    <Link to="/contact">Get in Touch</Link>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                   <Button
@@ -100,20 +101,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="py-12 border-t border-hero-muted/10">
-            <div className="mx-auto max-w-7xl px-6">
-              <div className="text-center">
-                <p className="text-sm text-hero-muted font-medium uppercase tracking-widest">Technologies We Master</p>
-              </div>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-                {['ReactJS', 'Angular', 'NodeJS', 'React Native', '.NET', 'AWS', 'Azure', 'MongoDB'].map((tech) => (
-                  <span key={tech} className="text-hero-muted/60 font-display font-medium text-lg hover:text-hero-foreground transition-colors cursor-default">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+      
         </section>
       </main>
     </>
@@ -121,15 +109,14 @@ export function HeroSection() {
 }
 
 const menuItems = [
-  { name: 'Services', href: '#services' },
+  { name: 'Home', href: '/' },
   { name: 'AI Solutions', href: '/ai-solutions' },
   { name: 'Cloud Solutions', href: '/cloud-ai-infrastructure' },
-  { name: 'Technologies', href: '#technologies' },
-  { name: 'Why Us', href: '#why-us' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Intelligent Systems', href: '/ai-integrated-software' },
+  { name: 'Contact', href: '/contact' },
 ];
 
-const HeroHeader = () => {
+export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -169,16 +156,26 @@ const HeroHeader = () => {
 
           <div className="hidden lg:flex lg:items-center lg:gap-8">
             {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm text-hero-muted hover:text-hero-foreground transition-colors font-medium"
-              >
-                {item.name}
-              </a>
+              item.href.startsWith('/') ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-sm text-hero-muted hover:text-hero-foreground transition-colors font-medium"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm text-hero-muted hover:text-hero-foreground transition-colors font-medium"
+                >
+                  {item.name}
+                </a>
+              )
             ))}
             <Button size="sm" className="rounded-full bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
-              <a href="#contact">Get Started</a>
+              <Link to="/contact">Get Started</Link>
             </Button>
           </div>
 
@@ -186,17 +183,28 @@ const HeroHeader = () => {
             <div className="absolute inset-x-0 top-full bg-hero/95 backdrop-blur-lg border-b border-hero-muted/10 p-6 lg:hidden">
               <div className="flex flex-col gap-4">
                 {menuItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMenuState(false)}
-                    className="text-hero-muted hover:text-hero-foreground transition-colors font-medium py-2"
-                  >
-                    {item.name}
-                  </a>
+                  item.href.startsWith('/') ? (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      onClick={() => setMenuState(false)}
+                      className="text-hero-muted hover:text-hero-foreground transition-colors font-medium py-2"
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMenuState(false)}
+                      className="text-hero-muted hover:text-hero-foreground transition-colors font-medium py-2"
+                    >
+                      {item.name}
+                    </a>
+                  )
                 ))}
                 <Button className="rounded-full mt-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
-                  <a href="#contact">Get Started</a>
+                  <Link to="/contact">Get Started</Link>
                 </Button>
               </div>
             </div>

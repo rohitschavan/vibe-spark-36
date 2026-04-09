@@ -177,7 +177,7 @@ Integration with existing systems can be complex. Organizations need to ensure t
 Looking ahead, AI will play an even greater role in cybersecurity. Advances in technology will lead to more intelligent and adaptive security systems. These systems will be able to predict and respond to threats with greater accuracy and speed.
 
 In conclusion, AI is transforming cybersecurity by providing advanced tools for threat detection, prevention, and response. While challenges exist, the benefits make AI an essential component of modern security strategies.`,
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     date: 'February 5, 2025',
     readTime: '7 min read',
     category: 'Cybersecurity',
