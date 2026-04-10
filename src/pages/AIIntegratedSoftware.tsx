@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Code, Blocks, Link2, ShieldCheck, Gauge, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TextEffect } from '@/components/ui/text-effect';
@@ -203,7 +203,7 @@ const AIIntegratedSoftware = () => {
             <p className="mt-4 text-muted-foreground leading-relaxed">
               We combine strategic thinking, technical expertise, and continuous collaboration to turn ideas into production-ready AI-powered systems.
             </p>
-            <Link to="/contact" className="mt-8 inline-block">
+            <Link href="/contact" className="mt-8 inline-block">
               <Button size="lg" className="rounded-full">
                 Discuss Your Product
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -320,7 +320,7 @@ const AIIntegratedSoftware = () => {
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               If you are planning to build or scale an AI-powered application, we are ready to partner with you.
             </p>
-            <Link to="/contact" className="mt-8 inline-block">
+            <Link href="/contact" className="mt-8 inline-block">
               <Button size="lg" className="rounded-full">
                 Build with Confidence
                 <ArrowRight className="ml-2 h-4 w-4" />

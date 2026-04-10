@@ -1,0 +1,12 @@
+{
+  "/": "pages/index.html",
+  "/404": "pages/404.html",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/ai-integrated-software": "pages/ai-integrated-software.html",
+  "/ai-solutions": "pages/ai-solutions.html",
+  "/blog/[slug]": "pages/blog/[slug].html",
+  "/cloud-ai-infrastructure": "pages/cloud-ai-infrastructure.html",
+  "/contact": "pages/contact.html"
+}

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
 import { blogPosts } from '@/data/blog-posts';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export function BlogSection() {
   return (
@@ -35,7 +35,7 @@ export function BlogSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link
-                to={`/blog/${post.id}`}
+                href={`/blog/${post.id}`}
                 className="group block h-full overflow-hidden rounded-2xl bg-card card-glow border border-border transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="aspect-video overflow-hidden">

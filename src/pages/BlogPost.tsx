@@ -1,11 +1,13 @@
-import { useParams, Link } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { blogPosts } from '@/data/blog-posts';
 import { Button } from '@/components/ui/button';
 import { FooterSection } from '@/components/blocks/footer-section';
 
 const BlogPost = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const router = useRouter();
+  const slug = typeof router.query.slug === 'string' ? router.query.slug : undefined;
   const post = blogPosts.find((p) => p.id === slug);
 
   if (!post) {
@@ -14,7 +16,7 @@ const BlogPost = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold font-display text-foreground">Post Not Found</h1>
           <p className="mt-4 text-muted-foreground">The blog post you are looking for does not exist.</p>
-          <Link to="/">
+          <Link href="/">
             <Button className="mt-6">Back to Home</Button>
           </Link>
         </div>
@@ -30,7 +32,7 @@ const BlogPost = () => {
       <div className="hero-section">
         <div className="mx-auto max-w-4xl px-6 py-20">
           <Link
-            to="/#blog"
+            href="/#blog"
             className="inline-flex items-center gap-2 text-sm text-hero-muted hover:text-hero-foreground transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -91,7 +93,7 @@ const BlogPost = () => {
             .map((related) => (
               <Link
                 key={related.id}
-                to={`/blog/${related.id}`}
+                href={`/blog/${related.id}`}
                 className="group flex gap-4 rounded-xl bg-card border border-border p-4 card-glow transition-all hover:-translate-y-0.5"
               >
                 <img

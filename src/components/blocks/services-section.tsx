@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code, Cloud, Brain, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const services = [
@@ -73,7 +73,7 @@ export function ServicesSection() {
                 </div>
                 <h3 className="text-xl font-bold font-display text-card-foreground">{service.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                <Link to={service.href} className="mt-5 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                <Link href={service.href} className="mt-5 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors">
                   Explore solution
                   <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Link>

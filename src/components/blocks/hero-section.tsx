@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Menu, X } from 'lucide-react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { AnimatedGroup } from '@/components/ui/animated-group';
 import { TextEffect } from '@/components/ui/text-effect';
@@ -40,16 +40,6 @@ export function HeroSection() {
 
             <div className="mx-auto max-w-7xl px-6 relative z-10">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                <AnimatedGroup preset="blur-slide">
-                  {/* <a
-                    href="#services"
-                    className="inline-flex items-center gap-2 rounded-full border border-hero-muted/20 bg-hero/80 backdrop-blur px-4 py-1.5 text-sm text-hero-muted hover:bg-hero-muted/10 transition-colors"
-                   >
-                    <span className="gradient-text font-medium">Generative AI Solutions for Business</span>
-                    <ChevronRight className="h-4 w-4" />
-                  </a> */}
-                </AnimatedGroup>
-
                 <TextEffect
                   preset="blur"
                   className="mt-8 text-4xl font-bold tracking-tight text-hero-foreground md:text-6xl lg:text-7xl font-display"
@@ -72,7 +62,7 @@ export function HeroSection() {
                   className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
                 >
                   <Button size="lg" className="rounded-full px-8 gap-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
-                    <Link to="/contact">Get in Touch</Link>
+                    <Link href="/contact">Get in Touch</Link>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                   <Button
@@ -140,7 +130,11 @@ export const HeroHeader = () => {
       >
         <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Logo />
+            <img
+              src="/logo.png"
+              alt="Vibe IT Solutions logo"
+              className="h-8 w-8 rounded-md object-cover"
+            />
             <span className="font-display font-bold text-xl text-hero-foreground">
               Vibe IT
             </span>
@@ -159,7 +153,7 @@ export const HeroHeader = () => {
               item.href.startsWith('/') ? (
                 <Link
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   className="text-sm text-hero-muted hover:text-hero-foreground transition-colors font-medium"
                 >
                   {item.name}
@@ -175,7 +169,7 @@ export const HeroHeader = () => {
               )
             ))}
             <Button size="sm" className="rounded-full bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
-              <Link to="/contact">Get Started</Link>
+              <Link href="/contact">Get Started</Link>
             </Button>
           </div>
 
@@ -186,7 +180,7 @@ export const HeroHeader = () => {
                   item.href.startsWith('/') ? (
                     <Link
                       key={item.name}
-                      to={item.href}
+                      href={item.href}
                       onClick={() => setMenuState(false)}
                       className="text-hero-muted hover:text-hero-foreground transition-colors font-medium py-2"
                     >
@@ -204,7 +198,7 @@ export const HeroHeader = () => {
                   )
                 ))}
                 <Button className="rounded-full mt-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
-                  <Link to="/contact">Get Started</Link>
+                  <Link href="/contact">Get Started</Link>
                 </Button>
               </div>
             </div>
@@ -215,17 +209,3 @@ export const HeroHeader = () => {
   );
 };
 
-const Logo = () => {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="h-8 w-8" fill="none">
-      <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
-      <path d="M8 12L16 22L24 12" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      <defs>
-        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
-          <stop stopColor="hsl(217, 91%, 50%)" />
-          <stop offset="1" stopColor="hsl(262, 83%, 58%)" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
-};

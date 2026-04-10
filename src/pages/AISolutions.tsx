@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import {
   Brain,
   ArrowRight,
@@ -194,7 +194,7 @@ const AISolutions = () => {
               At Vibe IT Solutions, we empower businesses to scale faster, operate smarter, and innovate continuously using cutting-edge Artificial Intelligence. From automation to predictive insights, our AI solutions are designed to solve real-world business challenges.
             </TextEffect>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button size="lg" className="rounded-full">
                   Request a Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -446,7 +446,7 @@ const AISolutions = () => {
               Partner with Vibe IT Solutions to plan, build, and scale intelligent solutions tailored to your business goals.
             </p>
             <div className="mt-8 flex justify-center gap-4">
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button size="lg" className="rounded-full">
                   Request a Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />

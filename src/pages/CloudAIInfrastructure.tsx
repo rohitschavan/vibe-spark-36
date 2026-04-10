@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Cloud, Server, Shield, Activity, Wallet, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TextEffect } from '@/components/ui/text-effect';
@@ -121,7 +121,7 @@ const CloudAIInfrastructure = () => {
               <p className="mt-6 text-muted-foreground leading-relaxed">
                 We establish technical guardrails and operational standards so your teams can ship AI features confidently and sustainably.
               </p>
-              <Link to="/contact" className="mt-8 inline-block">
+              <Link href="/contact" className="mt-8 inline-block">
                 <Button size="lg" className="rounded-full">
                   Plan Your Infrastructure
                   <ArrowRight className="ml-2 h-4 w-4" />

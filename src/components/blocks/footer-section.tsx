@@ -7,9 +7,8 @@ import {
   MapPin,
   Phone,
   Twitter,
-  Code2,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const data = {
   facebookLink: 'https://facebook.com/vibeitsolutions',
@@ -82,8 +81,12 @@ export function FooterSection() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <Link to="/" className="inline-flex items-center gap-2">
-              <Code2 className="h-7 w-7 text-primary" />
+            <Link href="/" className="inline-flex items-center gap-2">
+              <img
+                src="/logo.png"
+                alt="Vibe IT Solutions logo"
+                className="h-7 w-7 rounded-md object-cover"
+              />
               <span className="text-xl font-bold text-foreground">
                 {data.company.name}
               </span>
@@ -119,7 +122,7 @@ export function FooterSection() {
                 {serviceLinks.map(({ text, href }) => (
                   <li key={text}>
                     <Link
-                      to={href}
+                      href={href}
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
                     >
                       {text}
@@ -137,7 +140,7 @@ export function FooterSection() {
                 {aboutLinks.map(({ text, href }) => (
                   <li key={text}>
                     <Link
-                      to={href}
+                      href={href}
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
                     >
                       {text}
@@ -155,7 +158,7 @@ export function FooterSection() {
                 {helpfulLinks.map(({ text, href }) => (
                   <li key={text}>
                     <Link
-                      to={href}
+                      href={href}
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
                     >
                       {text}
