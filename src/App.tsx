@@ -10,6 +10,7 @@ import AISolutions from "./pages/AISolutions.tsx";
 import AIIntegratedSoftware from "./pages/AIIntegratedSoftware.tsx";
 import CloudAIInfrastructure from "./pages/CloudAIInfrastructure.tsx";
 import ContactUs from "./pages/ContactUs.tsx";
+import SaasSolutions from "./pages/SaasSolutions.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/ai-solutions" element={<AISolutions />} />
           <Route path="/ai-integrated-software" element={<AIIntegratedSoftware />} />
           <Route path="/cloud-ai-infrastructure" element={<CloudAIInfrastructure />} />
+          <Route path="/saas-solutions" element={<SaasSolutions />} />
           <Route path="/contact" element={<ContactUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
