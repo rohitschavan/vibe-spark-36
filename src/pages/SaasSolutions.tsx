@@ -167,7 +167,7 @@ export default function SaasSolutions() {
               SaaS Platform Development
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              <TextEffect preset="blur-slide" as="span" className="text-hero-foreground">
+              <TextEffect preset="blur" as="span" className="text-hero-foreground">
                 Build Scalable SaaS
               </TextEffect>
               <br />
