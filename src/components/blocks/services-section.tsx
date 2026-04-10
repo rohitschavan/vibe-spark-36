@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code, Cloud, Brain, ArrowRight } from 'lucide-react';
+import { Code, Cloud, Brain, Layers, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -27,6 +27,14 @@ const services = [
       'Deploy and scale AI workloads on AWS, Azure, and Google Cloud with observability, cost control, and enterprise-grade reliability.',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
     href: '/cloud-ai-infrastructure',
+  },
+  {
+    icon: Layers,
+    title: 'SaaS Platform Development',
+    description:
+      'We design and build scalable, multi-tenant SaaS platforms with subscription billing, analytics dashboards, and API-first architecture.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+    href: '/saas-solutions',
   },
 ];
 
