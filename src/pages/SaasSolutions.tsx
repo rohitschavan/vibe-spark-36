@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import {
   Layers,
   ArrowRight,
@@ -153,36 +153,36 @@ export default function SaasSolutions() {
       <HeroHeader />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 hero-section overflow-hidden">
+      <section className="relative hero-section overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--vibe-blue)/0.15),transparent_60%)]" />
-        <div className="mx-auto max-w-7xl px-6 relative z-10">
+        <div className="relative mx-auto max-w-5xl px-6 py-24 md:py-32 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="max-w-3xl"
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-hero-muted/20 bg-hero-muted/5 px-4 py-1.5 text-sm text-hero-muted mb-6">
               <Layers className="h-4 w-4" />
               SaaS Platform Development
             </span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight mb-6 text-hero-foreground leading-tight">
               <TextEffect preset="blur" as="span" className="text-hero-foreground">
                 Build Scalable SaaS
               </TextEffect>
               <br />
               <span className="gradient-text">Platforms That Grow With You</span>
             </h1>
-            <p className="text-lg text-hero-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-lg text-hero-muted max-w-2xl mb-10 leading-relaxed">
               From idea to launch and beyond, we design, develop, and scale SaaS products that deliver recurring value to your users and sustainable growth for your business.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 asChild
                 size="lg"
                 className="rounded-full bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0"
               >
-                <Link to="/contact">
+                <Link href="/contact">
                   Start Your SaaS Project <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -190,7 +190,7 @@ export default function SaasSolutions() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full border-hero-muted/30 text-hero-foreground hover:bg-hero-muted/10"
+                  className="rounded-full border-hero-muted/30 bg-transparent text-hero-foreground hover:bg-hero-muted/10 hover:text-hero-foreground"
               >
                 <a href="#services">Explore Our Services</a>
               </Button>
@@ -433,7 +433,7 @@ export default function SaasSolutions() {
                 size="lg"
                 className="rounded-full bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0"
               >
-                <Link to="/contact">
+                <Link href="/contact">
                   Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

@@ -30,7 +30,7 @@ const BlogPost = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="hero-section">
-        <div className="mx-auto max-w-4xl px-6 py-20">
+        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
           <Link
             href="/#blog"
             className="inline-flex items-center gap-2 text-sm text-hero-muted hover:text-hero-foreground transition-colors mb-8"
