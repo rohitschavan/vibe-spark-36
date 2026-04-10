@@ -61,11 +61,18 @@ export function HeroSection() {
                   preset="blur-slide"
                   className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
                 >
-                  <Button size="lg" className="rounded-full px-8 gap-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
-                    <Link href="/contact">Get in Touch</Link>
-                    <ArrowRight className="h-4 w-4" />
+                  <Button
+                    asChild
+                    size="lg"
+                    className="rounded-full px-8 gap-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0"
+                  >
+                    <Link href="/contact">
+                      Get in Touch
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </Button>
                   <Button
+                    asChild
                     size="lg"
                     variant="outline"
                     className="rounded-full px-8 border-hero-muted/30 bg-transparent text-hero-foreground hover:bg-hero-muted/10 hover:text-hero-foreground"
@@ -124,7 +131,7 @@ export const HeroHeader = () => {
         className={cn(
           'fixed z-50 w-full transition-all duration-300',
           isScrolled
-            ? 'bg-hero/80 backdrop-blur-lg border-b border-hero-muted/10 py-3'
+            ? 'bg-hero/80 backdrop-blur-lg py-3'
             : 'py-5'
         )}
       >
@@ -133,10 +140,10 @@ export const HeroHeader = () => {
             <img
               src="/logo.png"
               alt="Vibe IT Solutions logo"
-              className="h-8 w-8 rounded-md object-cover"
+              className="h-11 w-11 rounded-md object-cover"
             />
             <span className="font-display font-bold text-xl text-hero-foreground">
-              Vibe IT
+              Vibe IT Solutions
             </span>
           </div>
 
@@ -168,7 +175,11 @@ export const HeroHeader = () => {
                 </a>
               )
             ))}
-            <Button size="sm" className="rounded-full bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0"
+            >
               <Link href="/contact">Get Started</Link>
             </Button>
           </div>
@@ -197,7 +208,10 @@ export const HeroHeader = () => {
                     </a>
                   )
                 ))}
-                <Button className="rounded-full mt-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">
+                <Button
+                  asChild
+                  className="rounded-full mt-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0"
+                >
                   <Link href="/contact">Get Started</Link>
                 </Button>
               </div>

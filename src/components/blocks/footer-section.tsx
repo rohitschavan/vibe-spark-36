@@ -85,7 +85,7 @@ export function FooterSection() {
               <img
                 src="/logo.png"
                 alt="Vibe IT Solutions logo"
-                className="h-7 w-7 rounded-md object-cover"
+                className="h-20 w-20 rounded-md object-cover"
               />
               <span className="text-xl font-bold text-foreground">
                 {data.company.name}
