@@ -168,10 +168,10 @@ export default function SaasSolutions() {
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight mb-6 text-hero-foreground leading-tight">
               <TextEffect preset="blur" as="span" className="text-hero-foreground">
-                Build Scalable SaaS
+                Build Scalable SaaS Platforms That Grow With You
               </TextEffect>
               <br />
-              <span className="gradient-text">Platforms That Grow With You</span>
+              <span className="gradient-text"></span>
             </h1>
             <p className="text-lg text-hero-muted max-w-2xl mb-10 leading-relaxed">
               From idea to launch and beyond, we design, develop, and scale SaaS products that deliver recurring value to your users and sustainable growth for your business.
