@@ -10,37 +10,58 @@ const infrastructurePillars = [
   {
     icon: Server,
     title: 'Scalable AI Runtime',
-    description: 'Design inference and retrieval infrastructure that handles real traffic with predictable performance.',
+    description:
+      'We design and implement runtime environments that can handle real-world traffic with predictable performance. This includes optimizing inference pipelines, managing compute resources efficiently, and ensuring low-latency responses even under heavy loads. Our infrastructure supports dynamic scaling, allowing your systems to adapt to changing demand without compromising performance or user experience.',
   },
   {
     icon: Shield,
     title: 'Security and Compliance',
-    description: 'Protect model interactions and data flows with policy controls, encryption, and audit-ready operations.',
+    description:
+      'Security is a fundamental requirement for any AI system, especially when dealing with sensitive data and model interactions. We implement robust security measures, including encryption, access control, and secure API gateways, to protect your data at every stage. Our solutions align with industry standards and compliance requirements, ensuring your AI operations remain secure, auditable, and trustworthy.',
   },
   {
     icon: Activity,
     title: 'Observability by Default',
-    description: 'Track latency, token usage, costs, and quality signals so teams can tune systems continuously.',
+    description:
+      'Understanding how your AI system behaves in production is essential for continuous improvement. We integrate observability into every layer of your infrastructure, enabling you to track key metrics such as latency, token usage, cost, and response quality. With real-time monitoring and detailed insights, your team can quickly identify issues, optimize performance, and maintain high-quality outputs.',
   },
   {
     icon: Wallet,
     title: 'Cost-Optimized Architecture',
-    description: 'Right-size cloud resources and model usage strategies to keep AI spend efficient as you scale.',
+    description:
+      'AI workloads can become expensive if not managed properly. We design cost-efficient architectures by optimizing resource allocation, selecting the right models, and implementing smart usage strategies. Our approach ensures that you achieve the best performance while keeping operational costs under control, making your AI initiatives sustainable as they scale.',
   },
 ];
 
 const outcomes = [
-  'Production deployment patterns for AWS, Azure, and GCP',
-  'CI/CD pipelines for AI services with rollback and release controls',
-  'Monitoring dashboards for model behavior, response quality, and cost',
-  'Operational playbooks for incidents, scaling, and reliability targets',
-  'Governance frameworks for secure enterprise AI operations',
+  {
+    title: 'Cloud Deployment Patterns',
+    desc: 'We define and implement cloud deployment patterns tailored to your business needs, leveraging platforms such as AWS, Azure, and GCP. These patterns ensure consistency, scalability, and reliability across your environments, whether you are running a single service or a complex distributed system.',
+  },
+  {
+    title: 'CI/CD Pipelines for AI Services',
+    desc: 'We set up CI/CD pipelines specifically designed for AI services. These pipelines include version control, automated testing, rollback mechanisms, and release management, allowing your team to deploy updates safely and efficiently.',
+  },
+  {
+    title: 'Monitoring & Analytics Dashboards',
+    desc: 'We provide customized dashboards that give you visibility into model performance, system health, response quality, and operational costs. This enables data-driven decision-making and helps your team maintain optimal performance at all times.',
+  },
+  {
+    title: 'Operational Playbooks',
+    desc: 'We develop operational playbooks that guide your team in handling incidents, scaling systems, and meeting reliability targets. These playbooks ensure that your operations remain smooth and predictable, even in high-pressure scenarios.',
+  },
+  {
+    title: 'Governance Frameworks',
+    desc: 'We establish governance frameworks that define policies, access controls, and compliance standards for your AI systems. This ensures that your infrastructure remains secure, compliant, and aligned with enterprise requirements as your organization grows.',
+  },
 ];
 
 const CloudAIInfrastructure = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroHeader />
+
+      {/* Hero */}
       <div className="hero-section relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary blur-[100px]" />
@@ -64,12 +85,28 @@ const CloudAIInfrastructure = () => {
               delay={0.2}
               className="mt-6 text-lg md:text-xl text-hero-muted max-w-2xl leading-relaxed"
             >
-              We architect cloud platforms that keep your AI workloads fast, secure, observable, and cost-efficient from pilot to scale.
+              Modern AI systems require more than just powerful models — they demand robust, scalable, and secure infrastructure that supports real-world usage from pilot to enterprise scale.
             </TextEffect>
           </motion.div>
         </div>
       </div>
 
+      {/* Intro paragraph */}
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl px-6">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-lg text-muted-foreground leading-relaxed text-center"
+          >
+            From early-stage pilots to enterprise-scale deployments, our approach focuses on building a strong technical foundation that enables your AI systems to evolve seamlessly. Whether you are deploying machine learning models, building intelligent applications, or integrating AI into existing systems, we ensure your infrastructure is production-ready and future-proof.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Core Infrastructure Pillars */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           <motion.div
@@ -83,6 +120,9 @@ const CloudAIInfrastructure = () => {
             <h2 className="mt-4 text-3xl font-bold font-display md:text-5xl text-foreground">
               Built for <span className="gradient-text">Performance and Trust</span>
             </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+              A well-architected infrastructure is critical to delivering consistent and high-quality AI experiences. We focus on four key pillars that ensure your systems are both reliable and scalable.
+            </p>
           </motion.div>
           <div className="grid gap-8 md:grid-cols-2">
             {infrastructurePillars.map((item, index) => (
@@ -105,52 +145,58 @@ const CloudAIInfrastructure = () => {
         </div>
       </section>
 
+      {/* What You Get */}
       <section className="py-24 bg-muted/30">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="grid gap-12 md:grid-cols-2 items-start">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-sm font-medium uppercase tracking-widest text-primary">What You Get</span>
-              <h2 className="mt-4 text-3xl font-bold font-display md:text-4xl text-foreground">
-                Enterprise-Grade Operations for <span className="gradient-text">AI Workloads</span>
-              </h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed">
-                We establish technical guardrails and operational standards so your teams can ship AI features confidently and sustainably.
-              </p>
-              <Link href="/contact" className="mt-8 inline-block">
-                <Button size="lg" className="rounded-full">
-                  Plan Your Infrastructure
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </motion.div>
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-medium uppercase tracking-widest text-primary">What You Get</span>
+            <h2 className="mt-4 text-3xl font-bold font-display md:text-4xl text-foreground">
+              Enterprise-Grade Operations for <span className="gradient-text">AI Workloads</span>
+            </h2>
+            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
+              Our goal is to provide you with a complete operational framework that enables your team to build, deploy, and manage AI systems with confidence. We go beyond infrastructure setup to establish the processes and standards required for long-term success.
+            </p>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-4"
-            >
-              {outcomes.map((item, index) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0, x: 10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className="flex items-start gap-3 rounded-xl bg-card border border-border p-4"
-                >
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {outcomes.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="rounded-2xl bg-card border border-border p-6 card-glow"
+              >
+                <div className="flex items-start gap-3 mb-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-card-foreground leading-relaxed">{item}</span>
-                </motion.div>
-              ))}
-            </motion.div>
+                  <h3 className="text-base font-bold font-display text-card-foreground">{item.title}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 text-center"
+          >
+            <Link href="/contact">
+              <Button size="lg" className="rounded-full">
+                Plan Your Infrastructure
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
