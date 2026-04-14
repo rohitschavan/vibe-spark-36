@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import vibeithmsDashboard from '@/assets/vibeithms-dashboard.jpg';
 
+const dashboardSrc = typeof vibeithmsDashboard === 'string' ? vibeithmsDashboard : (vibeithmsDashboard as any).src ?? vibeithmsDashboard;
+
 const capabilities = [
   { icon: Users, label: 'Patient Management (OPD/IPD)' },
   { icon: FileText, label: 'Electronic Medical Records' },
