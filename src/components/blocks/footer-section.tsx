@@ -22,12 +22,12 @@ const data = {
     aiSolutions: '/ai-solutions',
   },
   about: {
-    team: '#',
-    careers: '#',
+    team: '/ai-integrated-software',
+    careers: '/contact',
   },
   help: {
-    faqs: '#',
-    support: '#',
+    faqs: '/#ai-software-development-company',
+    support: '/contact',
   },
   contact: {
     email: 'info@vibeitsolutions.com',
@@ -44,10 +44,10 @@ const data = {
 };
 
 const socialLinks = [
-  { icon: Facebook, label: 'Facebook', href: data.facebookLink },
-  { icon: Instagram, label: 'Instagram', href: data.instaLink },
-  { icon: Twitter, label: 'Twitter', href: data.twitterLink },
-  { icon: Github, label: 'GitHub', href: data.githubLink },
+  // { icon: Facebook, label: 'Facebook', href: data.facebookLink },
+  // { icon: Instagram, label: 'Instagram', href: data.instaLink },
+  // { icon: Twitter, label: 'Twitter', href: data.twitterLink },
+  // { icon: Github, label: 'GitHub', href: data.githubLink },
   { icon: Linkedin, label: 'LinkedIn', href: data.linkedinLink },
 ];
 
@@ -58,13 +58,19 @@ const serviceLinks = [
 ];
 
 const aboutLinks = [
-  { text: 'Meet the Team', href: data.about.team },
+  { text: 'Our Expertise', href: data.about.team },
   { text: 'Careers', href: data.about.careers },
 ];
 
 const helpfulLinks = [
   { text: 'FAQs', href: data.help.faqs },
   { text: 'Support', href: data.help.support },
+];
+
+const legalLinks = [
+  { text: 'Terms of Service', href: '/contact' },
+  { text: 'Privacy Policy', href: '/contact' },
+  { text: 'User Data Deletion', href: '/contact' },
 ];
 
 const contactInfo = [
@@ -206,15 +212,11 @@ export function FooterSection() {
             reserved.
           </p>
           <div className="flex gap-6 text-xs text-muted-foreground">
-            <a href="#" className="transition-colors hover:text-foreground">
-              Terms of Service
-            </a>
-            <a href="#" className="transition-colors hover:text-foreground">
-              Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:text-foreground">
-              User Data Deletion
-            </a>
+            {legalLinks.map(({ text, href }) => (
+              <Link key={text} href={href} className="transition-colors hover:text-foreground">
+                {text}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

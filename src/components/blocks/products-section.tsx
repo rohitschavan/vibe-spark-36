@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import { Hospital, Users, FileText, CreditCard, Pill, FlaskConical, UserCog, CalendarCheck, ExternalLink, ShieldCheck, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import vibeithmsDashboard from '@/assets/vibeithms-dashboard.jpg';
+import vibeithmsDashboard from '@/assets/vibeithms-dashboard.png';
+import vibeithmsLogo from '@/assets/vibeithmslogo.png';
 
 const dashboardSrc = typeof vibeithmsDashboard === 'string' ? vibeithmsDashboard : (vibeithmsDashboard as any).src ?? vibeithmsDashboard;
+const logoSrc = typeof vibeithmsLogo === 'string' ? vibeithmsLogo : (vibeithmsLogo as any).src ?? vibeithmsLogo;
 
 const capabilities = [
   { icon: Users, label: 'Patient Management (OPD/IPD)' },
@@ -75,9 +77,12 @@ export function ProductsSection() {
               </div>
 
               <div className="flex items-center gap-3 mb-3">
-                <div className="inline-flex items-center justify-center rounded-xl bg-primary/10 p-3">
-                  <Hospital className="h-6 w-6 text-primary" />
-                </div>
+           
+                <img
+                  src={logoSrc as string}
+                  alt="VIBEITHMS logo"
+                  className="h-10 w-10 rounded-lg object-cover"
+                />
                 <h3 className="text-2xl md:text-3xl font-bold font-display text-card-foreground">
                   VIBEITHMS
                 </h3>
@@ -88,7 +93,7 @@ export function ProductsSection() {
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                A fully integrated, ABHA-compliant Hospital Management System built in alignment with India's Ayushman Bharat Digital Mission (ABDM). VIBEITHMS enables hospitals and clinics to digitize end-to-end operations — from patient registration and EMR to billing, pharmacy, and lab management.
+                A fully integrated, ABHA-compliant Hospital Management System built in alignment with India's Ayushman Bharat Digital Mission (ABDM). VIBEITHMS enables hospitals and clinics to digitize end-to-end operations, from patient registration and EMR to billing, pharmacy, and lab management.
               </p>
 
               {/* Stats Row */}
@@ -140,7 +145,7 @@ export function ProductsSection() {
             <div className="flex items-start gap-3">
               <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
               <p className="text-sm text-muted-foreground leading-relaxed">
-                With VIBEITHMS, we are contributing to India's mission of making healthcare accessible, efficient, and paperless. Every hospital that goes live on VIBEITHMS becomes part of a connected national health network — reducing errors, cutting wait times, and empowering patients with control over their own health data.
+                With VIBEITHMS, we are contributing to India's mission of making healthcare accessible, efficient, and paperless. Every hospital that goes live on VIBEITHMS becomes part of a connected national health network reducing errors, cutting wait times, and empowering patients with control over their own health data.
               </p>
             </div>
           </div>

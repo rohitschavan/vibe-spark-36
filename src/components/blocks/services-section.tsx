@@ -28,14 +28,6 @@ const services = [
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
     href: '/cloud-ai-infrastructure',
   },
-  {
-    icon: Layers,
-    title: 'SaaS Platform Development',
-    description:
-      'We design and build scalable, multi-tenant SaaS platforms with subscription billing, analytics dashboards, and API-first architecture.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
-    href: '/saas-solutions',
-  },
 ];
 
 export function ServicesSection() {
