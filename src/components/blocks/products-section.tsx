@@ -60,7 +60,7 @@ export function ProductsSection() {
             {/* Dashboard Image */}
             <div className="relative overflow-hidden bg-[hsl(var(--hero-bg))] flex items-center justify-center p-8">
               <img
-                src={vibeithmsDashboard}
+                src={dashboardSrc as string}
                 alt="VIBEITHMS Hospital Management Dashboard"
                 className="rounded-xl shadow-2xl w-full object-cover"
               />
