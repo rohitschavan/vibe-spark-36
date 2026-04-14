@@ -6,6 +6,7 @@ import { ContactSection } from '@/components/blocks/contact-section';
 import { BlogSection } from '@/components/blocks/blog-section';
 import { FooterSection } from '@/components/blocks/footer-section';
 import { SeoContentSection } from '@/components/blocks/seo-content-section';
+import { ProductsSection } from '@/components/blocks/products-section';
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <HeroSection />
       <SeoContentSection />
       <ServicesSection />
+      <ProductsSection />
       <TechnologiesSection />
       <WhyChooseUsSection />
       <BlogSection />
