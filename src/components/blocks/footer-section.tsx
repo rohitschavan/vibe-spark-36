@@ -59,7 +59,7 @@ const serviceLinks = [
 
 const aboutLinks = [
   { text: 'Our Expertise', href: data.about.team },
-  { text: 'Careers', href: data.about.careers },
+  { text: 'Careers', href: '/careers' },
 ];
 
 const helpfulLinks = [
