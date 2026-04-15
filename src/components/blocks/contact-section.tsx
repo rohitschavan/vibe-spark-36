@@ -99,7 +99,7 @@ export function ContactSection() {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-hero-muted/5 border-hero-muted/20 text-hero-foreground placeholder:text-hero-muted/50"
+                className="bg-hero-muted/5 border-hero-muted/90 text-hero-foreground placeholder:text-hero-muted/95"
               />
             </div>
             <div>
@@ -108,7 +108,7 @@ export function ContactSection() {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-hero-muted/5 border-hero-muted/20 text-hero-foreground placeholder:text-hero-muted/50"
+                className="bg-hero-muted/5 border-hero-muted/90 text-hero-foreground placeholder:text-hero-muted/95"
               />
             </div>
             <div>
@@ -117,7 +117,7 @@ export function ContactSection() {
                 rows={5}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="bg-hero-muted/5 border-hero-muted/20 text-hero-foreground placeholder:text-hero-muted/50"
+                className="bg-hero-muted/5 border-hero-muted/90 text-hero-foreground placeholder:text-hero-muted/95"
               />
             </div>
             <Button type="submit" size="lg" className="w-full rounded-full gap-2 bg-gradient-to-r from-vibe-blue to-vibe-purple hover:opacity-90 text-primary-foreground border-0">

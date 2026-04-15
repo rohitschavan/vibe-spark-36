@@ -15,7 +15,7 @@ const data = {
   instaLink: 'https://instagram.com/vibeitsolutions',
   twitterLink: 'https://twitter.com/vibeitsolutions',
   githubLink: 'https://github.com/vibeitsolutions',
-  linkedinLink: 'https://linkedin.com/company/vibeitsolutions',
+  linkedinLink: 'https://linkedin.com/company/vibe-it-solutions',
   services: {
     customSoftware: '/ai-integrated-software',
     cloudSolutions: '/cloud-ai-infrastructure',
