@@ -12,3 +12,9 @@ export default function BlogPostRoute() {
     </>
   );
 }
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}

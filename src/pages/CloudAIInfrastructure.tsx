@@ -53,7 +53,10 @@ const outcomes = [
   {
     title: 'Governance Frameworks',
     desc: 'We establish governance frameworks that define policies, access controls, and compliance standards for your AI systems. This ensures that your infrastructure remains secure, compliant, and aligned with enterprise requirements as your organization grows.',
-  },
+  },{
+    title: 'Data Security and Compliance',
+    desc: 'We implement robust security measures, including encryption, access control, and secure API gateways, to protect your data at every stage. Our solutions align with industry standards and compliance requirements, ensuring your AI operations remain secure, auditable, and trustworthy.',
+  }
 ];
 
 const CloudAIInfrastructure = () => {
@@ -85,7 +88,7 @@ const CloudAIInfrastructure = () => {
               delay={0.2}
               className="mt-6 text-lg md:text-xl text-hero-muted max-w-2xl leading-relaxed"
             >
-              Modern AI systems require more than just powerful models — they demand robust, scalable, and secure infrastructure that supports real-world usage from pilot to enterprise scale.
+              Modern AI systems require more than just powerful models they demand robust, scalable, and secure infrastructure that supports real-world usage from pilot to enterprise scale.
             </TextEffect>
           </motion.div>
         </div>

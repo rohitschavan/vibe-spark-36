@@ -13,3 +13,9 @@ export default function AIIntegratedSoftwareRoute() {
     </>
   );
 }
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}

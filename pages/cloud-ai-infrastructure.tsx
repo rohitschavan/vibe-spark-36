@@ -13,3 +13,9 @@ export default function CloudAIInfrastructureRoute() {
     </>
   );
 }
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}

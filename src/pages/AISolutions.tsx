@@ -88,11 +88,6 @@ const aiServices = [
     title: 'Generative AI Solutions',
     description: 'Develop AI systems that create content, text, images, code, and more, to boost productivity and innovation.',
   },
-  {
-    icon: FileSearch,
-    title: 'Intelligent Document Processing',
-    description: 'Extract, classify, and manage data from documents automatically with high accuracy.',
-  },
 ];
 
 const advancedCapabilities = [

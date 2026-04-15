@@ -13,3 +13,9 @@ export default function AISolutionsRoute() {
     </>
   );
 }
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  };
+}
